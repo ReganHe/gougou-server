@@ -21,7 +21,7 @@ exports.signup = function *(next) {
 
     user = new User({
       nickname: '小狗宝',
-      avatar: 'http://res.cloudinary.com/gougou/image/upload/mooc1.png',
+      avatar: 'http://res.cloudinary.com/yanghe/image/upload/mooc1.png',
       phoneNumber: xss(phoneNumber),
       verifyCode: verifyCode,
       accessToken: accessToken
@@ -42,7 +42,7 @@ exports.signup = function *(next) {
     return next
   }
 
-  var msg = '您的注册验证码是：' + user.verifyCode
+  var msg = '你的注册验证码是：' + user.verifyCode
 
   try {
     yield sms.send(user.phoneNumber, msg)

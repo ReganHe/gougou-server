@@ -22,7 +22,7 @@ exports.send = function(phoneNumber, msg) {
 
     var postData = {
       mobile: phoneNumber,
-      message: msg + '【狗狗说】'
+      message: msg + '【杨河科技】'
     }
 
     var content = querystring.stringify(postData)
@@ -30,7 +30,7 @@ exports.send = function(phoneNumber, msg) {
       host: 'sms-api.luosimao.com',
       path: '/v1/send.json',
       method: 'POST',
-      auth: 'api:key-809096e2ffc3ec7accc5f85a862442d8',
+      auth: 'api:key-5a1d0ea1c7e719b973700a39d99f43be',
       agent: false,
       rejectUnauthorized: false,
       headers: {

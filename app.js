@@ -6,14 +6,14 @@ var mongoose = require('mongoose')
 var db = 'mongodb://localhost/imooc-app'
 
 mongoose.Promise = require('bluebird')
-mongoose.connect(db)
+mongoose.connect(db, {useMongoClient: true})
 
 var models_path = path.join(__dirname, '/app/models')
 
-var walk = function(modelPath) {
+var walk = function (modelPath) {
   fs
     .readdirSync(modelPath)
-    .forEach(function(file) {
+    .forEach(function (file) {
       var filePath = path.join(modelPath, '/' + file)
       var stat = fs.statSync(filePath)
 

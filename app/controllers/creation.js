@@ -125,9 +125,9 @@ function asyncMedia(videoId, audioId) {
     var video_public_id = video.public_id
     var audio_public_id = audio.public_id.replace(/\//g, ':')
     var videoName = video_public_id.replace(/\//g, '_') + '.mp4'
-    var videoURL = 'http://res.cloudinary.com/gougou/video/upload/e_volume:-100/e_volume:400,l_video:' + audio_public_id + '/' + video_public_id + '.mp4'
+    var videoURL = 'http://res.cloudinary.com/yanghe/video/upload/e_volume:-100/e_volume:400,l_video:' + audio_public_id + '/' + video_public_id + '.mp4'
     var thumbName = video_public_id.replace(/\//g, '_') + '.jpg'
-    var thumbURL = 'http://res.cloudinary.com/gougou/video/upload/' + video_public_id + '.jpg'
+    var thumbURL = 'http://res.cloudinary.com/yanghe/video/upload/' + video_public_id + '.jpg'
 
     console.log('同步视频到七牛')
 
@@ -328,8 +328,8 @@ exports.save = function *(next) {
     var audio_public_id = audio.public_id
 
     if (video_public_id && audio_public_id) {
-      creationData.cloudinary_thumb = 'http://res.cloudinary.com/gougou/video/upload/' + video_public_id + '.jpg'
-      creationData.cloudinary_video = 'http://res.cloudinary.com/gougou/video/upload/e_volume:-100/e_volume:400,l_video:' + audio_public_id.replace(/\//g, ':') + '/' + video_public_id + '.mp4'
+      creationData.cloudinary_thumb = 'http://res.cloudinary.com/yanghe/video/upload/' + video_public_id + '.jpg'
+      creationData.cloudinary_video = 'http://res.cloudinary.com/yanghe/video/upload/e_volume:-100/e_volume:400,l_video:' + audio_public_id.replace(/\//g, ':') + '/' + video_public_id + '.mp4'
 
       creationData.finish += 20
     }
